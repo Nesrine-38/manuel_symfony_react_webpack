@@ -28,6 +28,9 @@ class Possession
     private ?string $type = null;
 
     #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'possessions')]
+    #[JoinTable(name: "possession_user")]
+    #[JoinColumn(name: "possession_id", referencedColumnName: 'id')]
+    #[InverseJoinColumn(name: "user_id", referencedColumnName: 'id')]
     #[MaxDepth(1)]
     private Collection $possessions;
 
@@ -89,6 +92,7 @@ class Possession
     {
         if (!$this->possessions->contains($possession)) {
             $this->possessions->add($possession);
+            
         }
 
         return $this;
@@ -100,4 +104,11 @@ class Possession
 
         return $this;
     }
+
+    public function addUser(User $user): void
+{
+    if (!$this->possessions->contains($user)) {
+        $this->possessions[] = $user;
+    }
+}
 }

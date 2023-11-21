@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\Possession;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -121,6 +121,9 @@ class User
     private int $age;
 
     #[ORM\ManyToMany(targetEntity: Possession::class, mappedBy: 'possessions', cascade: ["persist"])]
+    #[JoinTable(name: "possession_user")]
+    #[JoinColumn(name: 'user_id', referencedColumnName: 'id')]
+    #[InverseJoinColumn(name: "possession_id", referencedColumnName: 'id')]
     #[MaxDepth(1)]
     private Collection $possessions;
 
@@ -134,6 +137,7 @@ class User
      * @return int
      * 
      */
+    #[Groups(["user"])]
     public function getAge(): int
     {
  
@@ -159,7 +163,10 @@ class User
  */
 public function addPossession(Possession $possession): void
 {
-    $this->possessions[] = $possession;
+    if (!$this->possessions->contains($possession)) {
+        $this->possessions[] = $possession;
+        $possession->addUser($this); // Ajoutez cette ligne pour mettre à jour la référence dans Possession
+    }
 }
 
     public function removePossession(Possession $possession): static
