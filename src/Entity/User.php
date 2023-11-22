@@ -165,7 +165,7 @@ public function addPossession(Possession $possession): void
 {
     if (!$this->possessions->contains($possession)) {
         $this->possessions[] = $possession;
-        $possession->addUser($this); // Ajoutez cette ligne pour mettre à jour la référence dans Possession
+        $possession->addUser($this); 
     }
 }
 

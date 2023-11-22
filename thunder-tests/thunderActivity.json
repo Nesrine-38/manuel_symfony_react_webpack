@@ -126,5 +126,19 @@
             "form": []
         },
         "tests": []
+    },
+    {
+        "_id": "11f5403c-d172-49ee-8322-218d8f057e19",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1:8000/api/users/1/possessions",
+        "url": "http://127.0.0.1:8000/api/users/1/possessions",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-11-22T13:42:58.192Z",
+        "modified": "2023-11-22T13:42:58.192Z",
+        "headers": [],
+        "params": [],
+        "tests": []
     }
 ]
