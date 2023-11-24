@@ -1,0 +1,12 @@
+.footer-container {
+    background-color: #eee; /* Ajoutez la couleur de fond souhaitée */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #5E17EB;
+    font-weight: bold;
+  }
+
+  

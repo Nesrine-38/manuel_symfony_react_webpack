@@ -1,0 +1,58 @@
+/* pour la feuille users.jsx*/
+.mes_users{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    padding: 40px;
+    color: #d7b94b;
+}
+.details{
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+    text-transform: capitalize;
+}
+.details:hover{
+    color: red;
+}
+.table {
+    border-radius: 8px; /* Ajoutez une bordure arrondie */
+    overflow: hidden; /* Pour que les coins arrondis fonctionnent correctement */
+  }
+.table th,
+.table td {
+  border: 1px solid #d7b94b;/* Ajoutez la bordure entre les colonnes */
+  padding: 8px; /* Ajoutez un espace à l'intérieur de chaque cellule */
+  text-align: center; /* Ajustez l'alignement du texte selon vos besoins */
+}
+.table th{
+    color: #5E17EB;
+}
+
+/*pour la feuille adduser.jsx*/
+.titreadd{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    color: #d7b94b;
+    padding: 40px;
+}
+.mb-1{
+    font-weight: bolder;
+    color: #5E17EB;
+}
+.form-control{
+    border-radius: 8px;
+    border: 1px solid #d7b94b ;
+}
+.ajouter{
+    background-color: white;
+    color: red;
+    border-radius: 8px;
+    border: 1px solid #d7b94b ;
+}
+/*pour la page userdetails*/
+.userdetails, .possession{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    padding: 40px;
+    color: #d7b94b;
+}
